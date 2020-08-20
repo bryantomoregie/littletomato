@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=RussoOne"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Tomato</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="panel_container">
+      <div class="app_name">
+        <h1>LittleTomato</h1>
+      </div>
+      <div class="navbar">
+        <button class="nav_button">
+          Log
+        </button>
+        <button id="setting" class="nav_button">
+          Setting
+        </button>
+        <button class="nav_button">
+          Connect with Developer
+        </button>
+      </div>
+    </div>
+    <div class="time_controllers">
+      <button class="time_button">Pomodoro</button>
+      <button class="time_button">Short Break</button>
+      <button class="time_button">Long Break</button>
+    </div>
+    <div class="time_remaining">
+      15:00
+    </div>
+    <div class="control_buttons">
+      <button id="start" class="button_control">Start</button>
+      <button id="stop" class="button_control">Stop</button>
+      <button id="reset" class="button_control">Reset</button>
+    </div>
+    <div id="modal" class="modal">
+      <h2>Options</h2>
+      <h3>Select Sound</h3>
+      <select class="select" id="alert_options" size="5">
+        <option value="80sAlarm">80's Alarm</option>
+        <option value="alarmclock">Alarm Clock</option>
+        <option value="alarmwatch">Wristwatch Alarm</option>
+        <option value="ding">Elevator Ding</option>
+        <option value="doorbell">Door Bell</option>
+      </select>
+      <br />
+      <h3>Select Volume</h3>
+      <select class="select" id="volume" size="5">
+        <option value="0">Mute</option>
+        <option value="0.25">25%</option>
+        <option value="0.5">50%</option>
+        <option value="0.75">75%</option>
+        <option value="1.0">100%</option>
+      </select>
+      <br />
+      <h3>Set Custom Times <small>(in minutes)</small></h3>
+      <div class="row">
+        <div class="four_columns">
+          <label for="time_pomodoro">Pomodoro</label>
+          <input
+            type="number"
+            id="time_pomodoro"
+            step="1"
+            min="1"
+            name="time_pomodoro"
+          />
+        </div>
+        <div class="four columns">
+          <label for="time_shortbreak">Short Break</label>
+          <!--Defines label tag for several elements, including <input>-->
+          <input
+            type="number"
+            id="time_shortbreak"
+            step="1"
+            min="1"
+            name="time_shortbreak"
+          />
+        </div>
+        <!-- When used together with the <label> element, the for attribute specifies which form element a label is bound to.-->
+        <div class="four columns">
+          <label for="time_longbreak">Long Break</label>
+          <input
+            type="number"
+            id="time_longbreak"
+            step="1"
+            min="1"
+            name="time_longbreak"
+          />
+        </div>
+      </div>
+      <!-- input "type" makes it that list of numbers, "step" sets how much to increment by, "min" is starting point.
+        The name attribute specifies the name of an <input> element. 
+        The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted.-->
+      <div class="input_buttons">
+        <input
+          type="button"
+          id="submit"
+          value="Save"
+          class="button"
+          onclick="saveSETTINGS();"
+        />
+        <input
+          type="button"
+          value="Reset"
+          class="button"
+          onclick="resetSETTINGS();"
+        />
+        <input
+          type="button"
+          id="soundtest"
+          value="Sound Test"
+          class="button"
+          onclick="soundTEST();"
+        />
+        <br />
+        <button class="close_button">&times;</button>
+        <!--defines a hyperlink and is used to link from one page to another-->
+      </div>
+    </div>
+    <div id="overlay"></div>
+  </body>
+</html>

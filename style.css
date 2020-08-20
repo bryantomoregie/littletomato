@@ -1,0 +1,156 @@
+*,
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.panel_container {
+  display: flex;
+  background-color: #dfdfdf;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app_name {
+  color: black;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  padding: 40px;
+}
+
+.nav_button {
+  float: left;
+  color: white;
+  background-color: #4d4d4d;
+  min-height: 30px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.time_controllers {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+.time_button {
+  background-color: #3399cc;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.control_buttons {
+  display: ruby;
+}
+
+.time_remaining {
+  font-size: 100px;
+  margin: 50px;
+  font-family: "Russo One";
+}
+
+.button_control {
+  margin: 20px;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+#start {
+  background-color: green;
+}
+
+#stop {
+  background-color: red;
+}
+
+#reset {
+  color: black;
+}
+
+.nav_button:hover,
+.nav_button:focus {
+  background: black;
+  color: white;
+}
+
+.time_button:hover,
+.time_button:focus{
+  background: blue;
+  outline: 0;
+}
+
+.button_control:hover,
+.button_control:focus{
+  background: rgba(0,0,0,0.2);
+  outline: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%
+}
+
+.modal h2 {
+    font-size: 40px;
+    margin: 10px
+}
+
+.row {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    margin: 10px;
+}
+
+.select {
+    width: 300px
+}
+
+.input_buttons {
+    margin: 30px;
+}
+
+.button {
+    background-color: #3399cc;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10%;
+}
+
+.close_button {
+    position: relative;
+    left: 220px;
+    bottom: 500px;
+    border: none;
+}
