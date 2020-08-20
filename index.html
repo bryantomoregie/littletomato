@@ -19,7 +19,7 @@
         <button class="nav_button">
           Log
         </button>
-        <button id="setting" class="nav_button">
+        <button data-modal-target="#modal" id="setting" class="nav_button">
           Setting
         </button>
         <button class="nav_button">
@@ -120,10 +120,46 @@
           onclick="soundTEST();"
         />
         <br />
-        <button class="close_button">&times;</button>
+        <button id="close" class="close_button">&times;</button>
         <!--defines a hyperlink and is used to link from one page to another-->
       </div>
     </div>
     <div id="overlay"></div>
+    <script>
+      const openModalButtons = document.querySelectorAll("[data-modal-target]");
+      const closeModalButtons = document.getElementById(
+        "close"
+      );
+      const overlay = document.getElementById("overlay");
+
+      openModalButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const modal = document.querySelector(button.dataset.modalTarget);
+          openModal(modal);
+        });
+      });
+
+      overlay.addEventListener('click', () => {
+          const modal = document.querySelector('.modal.active')
+          closeModal(modal)
+      })
+
+        closeModalButtons.addEventListener("click", () => {
+          const modal = document.getElementById("modal");
+          closeModal(modal);
+        });
+
+      function openModal(modal) {
+        if (modal == null) return;
+        modal.classList.add("active");
+        overlay.classList.add("active");
+      }
+
+      function closeModal(modal) {
+        if (modal == null) return;
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+    </script>
   </body>
 </html>

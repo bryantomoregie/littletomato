@@ -110,11 +110,16 @@ body {
     top: 50%;
     left: 50%;
     border: 1px solid black;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
     z-index: 10;
     background-color: white;
     width: 500px;
     max-width: 80%
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .modal h2 {
@@ -153,4 +158,25 @@ body {
     left: 220px;
     bottom: 500px;
     border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    opacity: 0;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
