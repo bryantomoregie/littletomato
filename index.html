@@ -28,12 +28,12 @@
       </div>
     </div>
     <div class="time_controllers">
-      <button class="time_button">Pomodoro</button>
-      <button class="time_button">Short Break</button>
-      <button class="time_button">Long Break</button>
+      <button id="pomodoro" class="time_button">Pomodoro</button>
+      <button id="short" class="time_button">Short Break</button>
+      <button id="long" class="time_button">Long Break</button>
     </div>
     <div class="time_remaining">
-      15:00
+      
     </div>
     <div class="control_buttons">
       <button id="start" class="button_control">Start</button>
@@ -125,41 +125,7 @@
       </div>
     </div>
     <div id="overlay"></div>
-    <script>
-      const openModalButtons = document.querySelectorAll("[data-modal-target]");
-      const closeModalButtons = document.getElementById(
-        "close"
-      );
-      const overlay = document.getElementById("overlay");
-
-      openModalButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const modal = document.querySelector(button.dataset.modalTarget);
-          openModal(modal);
-        });
-      });
-
-      overlay.addEventListener('click', () => {
-          const modal = document.querySelector('.modal.active')
-          closeModal(modal)
-      })
-
-        closeModalButtons.addEventListener("click", () => {
-          const modal = document.getElementById("modal");
-          closeModal(modal);
-        });
-
-      function openModal(modal) {
-        if (modal == null) return;
-        modal.classList.add("active");
-        overlay.classList.add("active");
-      }
-
-      function closeModal(modal) {
-        if (modal == null) return;
-        modal.classList.remove("active");
-        overlay.classList.remove("active");
-      }
+    <script src="tomoatotimer.js">
     </script>
   </body>
 </html>
