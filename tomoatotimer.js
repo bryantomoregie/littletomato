@@ -30,6 +30,7 @@ function timer(seconds) {
   }, 1000);
 }
 
+
 function displayTimeLeft(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
